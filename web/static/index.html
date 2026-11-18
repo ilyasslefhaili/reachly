@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reachly</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Reachly</h1>
+      <p class="sub">Find a work email from a name and company, checked live against the company's mail server over SMTP.</p>
+    </header>
+
+    <section class="card">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="single" role="tab">Single</button>
+        <button class="tab" data-tab="bulk" role="tab">Bulk</button>
+      </div>
+
+      <form id="single" class="pane">
+        <label>Full name
+          <input name="name" placeholder="Jean Dupont" required autocomplete="off">
+        </label>
+        <label>Company name or website
+          <input name="company" placeholder="acme.com (a website gives the best results)" required autocomplete="off">
+        </label>
+        <button type="submit">Find email</button>
+      </form>
+
+      <form id="bulk" class="pane hidden">
+        <label>One per line: <code>full name, company or website</code>
+          <textarea name="lines" rows="7" placeholder="Jean Dupont, acme.com&#10;Jane Doe, https://globex.io&#10;Sam Lee, Initech"></textarea>
+        </label>
+        <button type="submit">Find all</button>
+      </form>
+    </section>
+
+    <section id="results"></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
